@@ -16,19 +16,23 @@ const invokeAction = async ({ action, id, name, email, phone }) => {
 			});
 			return console.log(newContact);
 		case "remove":
-			const removeContact = contactsService.removeContact(id);
-			return console.log(removeContact);
+			const deleteContact = await contactsService.removeContact(id);
+			return console.log(deleteContact);
 		default:
 			break;
 	}
 };
 
 // invokeAction({ action: "list" });
+
 // invokeAction({ action: "get", id: "AeHIrLTr6JkxGE6SN-0Rw" });
-invokeAction({
-	action: "add",
-	id: "AeHIrLTr6JkxGE6SN-0Rw",
-	name: "Michael Jordan",
-	email: "Michael.Jordan@mail.com",
-	phone: "(995) 917-3797",
-});
+
+// invokeAction({
+// 	action: "add",
+// 	id: "AeHIrLTr6JkxGE6SN-0Rw",
+// 	name: "Michael Jordan",
+// 	email: "Michael.Jordan@mail.com",
+// 	phone: "(995) 917-3797",
+// });
+
+invokeAction({ action: "remove", id: "TYLVlred12ikuHjBFIJVc" });
