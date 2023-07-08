@@ -2,7 +2,7 @@
 
 `node index.js --action="list`
 ![Get and display the entire list of contacts](./assets/list.JPG)
-https://monosnap.com/file/7Mk4J0sN8Eg9w2nUBMBXWIvAIANQvV
+[Get and display the entire list of contacts](https://monosnap.com/file/7Mk4J0sN8Eg9w2nUBMBXWIvAIANQvV)
 
 # Get contact by id
 
