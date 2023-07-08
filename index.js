@@ -1,3 +1,4 @@
+import { program } from "commander";
 import contactsService from "./contacts.js";
 
 const invokeAction = async ({ action, id, name, email, phone }) => {
@@ -19,20 +20,18 @@ const invokeAction = async ({ action, id, name, email, phone }) => {
 			const deleteContact = await contactsService.removeContact(id);
 			return console.log(deleteContact);
 		default:
-			break;
+			console.warn("\x1B[31m Unknown action type!");
 	}
 };
 
-// invokeAction({ action: "list" });
+program
+	.option("-a, --action <type>", "choose action")
+	.option("-i, --id <type>", "user id")
+	.option("-n, --name <type>", "user name")
+	.option("-e, --email <type>", "user email")
+	.option("-p, --phone <type>", "user phone");
 
-// invokeAction({ action: "get", id: "AeHIrLTr6JkxGE6SN-0Rw" });
+program.parse(process.argv);
 
-// invokeAction({
-// 	action: "add",
-// 	id: "AeHIrLTr6JkxGE6SN-0Rw",
-// 	name: "Michael Jordan",
-// 	email: "Michael.Jordan@mail.com",
-// 	phone: "(995) 917-3797",
-// });
-
-invokeAction({ action: "remove", id: "TYLVlred12ikuHjBFIJVc" });
+const options = program.opts();
+invokeAction(options);
