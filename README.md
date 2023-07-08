@@ -1,6 +1,6 @@
 # CLI application
 
-## Get and display the entire list of contacts in the form of a table (console.table)
+## Get and display the entire list of contacts in the form of a table
 
 `node index.js --action="list`
 
